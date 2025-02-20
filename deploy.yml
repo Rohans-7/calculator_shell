@@ -4,15 +4,9 @@
   remote_user: rohan-sonawane
   become: false
   tasks:
-
-    - name: Install Python Docker SDK
-      pip:
-        name: docker
-        executable: pip3
-
     - name: Pull Docker Image
       docker_image:
-        name: "iiitb/calculator"
+        name: "imrds7/calculator2"
         source: pull
       register: docker_pull_result
 
@@ -26,4 +20,4 @@
         state: started
 
     - name: Running container
-      shell: docker run -it -d --name calculator iiitb/calculator /bin/bash
+      shell: docker run -it -d --name calculator imrds7/calculator2 /bin/bash
