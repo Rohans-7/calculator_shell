@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerHubCred') {
-                    sh 'docker tag calculator2 imrds7/calculator:latest'
+                    sh 'docker tag calculator2 imrds7/calculator2:latest'
                     sh 'docker push imrds7/calculator2'
                     }
                  }
